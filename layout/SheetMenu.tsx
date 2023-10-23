@@ -64,20 +64,20 @@ const components: { title: string; href: string; description?: string }[] = [
 
 export default function SheetMenu() {
 	return (
-		<Sheet>
-			<SheetTrigger>
-				<Menu />
-			</SheetTrigger>
-			<SheetContent>
-				<SheetHeader>
-					<SheetTitle>Are you sure absolutely sure?</SheetTitle>
-					<SheetDescription>
-						<NavMenu />
-					</SheetDescription>
-				</SheetHeader>
-			</SheetContent>
-		</Sheet>
-	);
+        <Sheet>
+            <SheetTrigger>
+                <Menu />
+            </SheetTrigger>
+            <SheetContent className="w-full">
+                <SheetHeader>
+                    <SheetTitle>Bellania</SheetTitle>
+                    <SheetDescription className='w-full min-h-screen overflow-y-scroll'>
+                        <NavMenu />
+                    </SheetDescription>
+                </SheetHeader>
+            </SheetContent>
+        </Sheet>
+    );
 }
 
 const ListItem = React.forwardRef<
