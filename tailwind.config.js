@@ -4,9 +4,10 @@ module.exports = {
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
+    './layout/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -17,6 +18,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        app: {
+          primary: '#f29faf',
+          accent: '#fdd6d3',
+          bg: '#fcf5ef'
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
