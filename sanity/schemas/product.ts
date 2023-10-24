@@ -49,7 +49,6 @@ export default defineType({
 					title: 'Alternative Text',
 					description:
 						"Provide alternative text for the product image. This text is essential for accessibility and helps describe the image when it can't be seen.",
-					validation: (Rule) => Rule.required(),
 				},
 			],
 		}),
