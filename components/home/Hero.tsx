@@ -1,14 +1,34 @@
+"use client"
 import * as React from "react";
 import Image from "next/image";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-
-export interface Artwork {
-    artist: string;
-    art: string;
-}
-
-export const works: Artwork[] = [
+const works= [
+    {
+        artist: "Ornella Binni",
+        art: "/images/hero/1.jpg",
+    },
+    {
+        artist: "Tom Byrom",
+        art: "/images/hero/2.jpg",
+    },
+    {
+        artist: "Vladimir Malyavko",
+        art: "/images/hero/3.jpg",
+    },
+    {
+        artist: "Ornella Binni",
+        art: "/images/hero/1.jpg",
+    },
+    {
+        artist: "Tom Byrom",
+        art: "/images/hero/2.jpg",
+    },
+    {
+        artist: "Vladimir Malyavko",
+        art: "/images/hero/3.jpg",
+    },
     {
         artist: "Ornella Binni",
         art: "/images/hero/1.jpg",
@@ -23,20 +43,51 @@ export const works: Artwork[] = [
     },
 ];
 
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 1,
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 1,
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+    },
+};
+
 export default function Hero() {
     return (
-        <div className="w-full h-full flex snap-x overflow-x-scroll ">
-            {works.map((artwork) => (
-                <Image
-                    key={artwork.artist}
-                    unoptimized
-                    src={artwork.art}
-                    alt={`Photo by ${artwork.artist}`}
-                    className="aspect-video snap-start h-screen w-screen object-cover"
-                    width={300}
-                    height={400}
-                />
-            ))}
+        <div className="w-full h-fit">
+            <Carousel
+                responsive={responsive}
+                ssr
+                autoPlay
+                infinite
+                slidesToSlide={1}
+                itemClass="image-item"
+                deviceType={""}
+                autoPlaySpeed={2000}
+                customRightArrow={<div></div>}
+                customLeftArrow={<div></div>}
+                transitionDuration={500}
+                centerMode={true}
+            >
+                {works.map((image, idx) => {
+                    return (
+                        <Image
+                            className="w-screen aspect-[9/16] md:aspect-square lg:aspect-video h-full object-cover"
+                            width={450}
+                            height={350}
+                            key={idx}
+                            src={image.art}
+                            alt={image.artist}
+                        />
+                    );
+                })}
+            </Carousel>
         </div>
     );
 }

@@ -6,7 +6,7 @@ import SheetMenu from './SheetMenu';
 
 const Navbar = () => {
 	return (
-		<nav className='w-full z-50 h-[5rem] fixed top-0 flex justify-between items-center p-4 md:px-16 lg:max-7xl lg:mx-auto'>
+		<nav className='w-full z-50 bg-white h-[5rem] sticky top-0 flex justify-between items-center p-4 md:px-16 lg:max-7xl lg:mx-auto'>
 			<div>
 				<Image
 					src='/images/logo.png'

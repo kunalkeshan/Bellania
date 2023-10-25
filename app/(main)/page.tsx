@@ -5,7 +5,7 @@ import Showcase from '@/components/home/Showcase';
 
 function Home() {
 	return (
-		<div>
+		<div className=''>
 			<Hero />
 			<Showcase />
 			<References />
