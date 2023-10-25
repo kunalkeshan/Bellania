@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Footer = () => {
+type FooterProps = React.ComponentProps<'footer'> & {
+	productCategory: ProductCategory[];
+};
+
+const Footer: React.FC<FooterProps> = ({}) => {
 	return <footer>Footer</footer>;
 };
 

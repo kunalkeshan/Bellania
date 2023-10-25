@@ -24,10 +24,14 @@ export const productCategoryPathsQuery = groq`*[_type == "productCategory" &&  d
 
 // Get all category
 export const productCategoryQuery = groq`*[_type == "productCategory" && defined(slug.current)]{
-  _id, title, slug, description
+  _id, title, "slug": slug.current, description
 }`;
 
 // Get all products
-export const productQuery = groq`*[_type == "product"]{
-  _id, title, description, "image": image.asset->url, "alt": image.alt
+export const productsQuery = groq`*[_type == "product"]{
+  _id, title, description, "image": image.asset->url, "alt": image.alt, "category": productCategory->{title, description, "slug": slug.current}
+}`;
+
+export const productsByCategoryQuery = groq`*[_type == "product" && references(*[_type=="productCategory" && slug.current == $slug]._id)]{
+  _id, title, description, "image": image.asset->url, "alt": image.alt, "category": productCategory->{title, description, "slug": slug.current}
 }`;
