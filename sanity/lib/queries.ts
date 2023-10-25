@@ -27,11 +27,17 @@ export const productCategoryQuery = groq`*[_type == "productCategory" && defined
   _id, title, "slug": slug.current, description, "image": image.asset->url, "alt": image.alt
 }`;
 
+// Get category by slug
+export const productCategoryBySlugQuery = groq`*[_type == "productCategory" && slug.current == $slug][0]{
+  _id, title, "slug": slug.current, description, "image": image.asset->url, "alt": image.alt
+}`;
+
 // Get all products
 export const productsQuery = groq`*[_type == "product"]{
   _id, title, description, "image": image.asset->url, "alt": image.alt, "category": productCategory->{title, description, "slug": slug.current}
 }`;
 
+// Get all products by category
 export const productsByCategoryQuery = groq`*[_type == "product" && references(*[_type=="productCategory" && slug.current == $slug]._id)]{
   _id, title, description, "image": image.asset->url, "alt": image.alt, "category": productCategory->{title, description, "slug": slug.current}
 }`;
