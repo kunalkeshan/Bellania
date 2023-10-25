@@ -16,3 +16,22 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
 export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
     "params": { "slug": slug.current }
   }`;
+
+// Get all category slugs
+export const productCategoryPathsQuery = groq`*[_type == "productCategory" &&  defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }`;
+
+// Get all category
+export const productCategoryQuery = groq`*[_type == "productCategory" && defined(slug.current)]{
+  _id, title, "slug": slug.current, description
+}`;
+
+// Get all products
+export const productsQuery = groq`*[_type == "product"]{
+  _id, title, description, "image": image.asset->url, "alt": image.alt, "category": productCategory->{title, description, "slug": slug.current}
+}`;
+
+export const productsByCategoryQuery = groq`*[_type == "product" && references(*[_type=="productCategory" && slug.current == $slug]._id)]{
+  _id, title, description, "image": image.asset->url, "alt": image.alt, "category": productCategory->{title, description, "slug": slug.current}
+}`;
