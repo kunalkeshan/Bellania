@@ -3,6 +3,8 @@ type ProductCategory = Readonly<{
 	title: string;
 	slug: string;
 	description: string;
+	image: string;
+	alt?: string;
 }>;
 
 type Product = Readonly<{

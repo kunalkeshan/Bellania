@@ -24,7 +24,7 @@ export const productCategoryPathsQuery = groq`*[_type == "productCategory" &&  d
 
 // Get all category
 export const productCategoryQuery = groq`*[_type == "productCategory" && defined(slug.current)]{
-  _id, title, "slug": slug.current, description
+  _id, title, "slug": slug.current, description, "image": image.asset->url, "alt": image.alt
 }`;
 
 // Get all products

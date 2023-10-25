@@ -35,5 +35,25 @@ export default defineType({
 			type: 'text',
 			validation: (Rule) => Rule.required(),
 		}),
+		defineField({
+			name: 'image',
+			title: 'Image',
+			description:
+				'Upload an image of your category. This image will be displayed alongside the showcase details.',
+			type: 'image',
+			options: {
+				hotspot: true,
+			},
+			validation: (Rule) => Rule.required(),
+			fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alternative Text',
+					description:
+						"Provide alternative text for the category. This text is essential for accessibility and helps describe the image when it can't be seen.",
+				},
+			],
+		}),
 	],
 });
