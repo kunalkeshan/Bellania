@@ -19,6 +19,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion';
+import { NAVBAR_NAVIGATION } from '@/constants/navigation';
 
 type NavMenuProps = React.ComponentProps<'div'> & {
 	productCategory: ProductCategory[];
@@ -73,33 +74,22 @@ const NavMenu: React.FC<NavMenuProps> = ({ productCategory }) => {
 						</AccordionItem>
 					</Accordion>
 				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<Link href='/docs' legacyBehavior passHref>
-						<NavigationMenuLink
-							className={navigationMenuTriggerStyle()}
+				{NAVBAR_NAVIGATION.map((item) => (
+					<NavigationMenuItem key={`nav-item-${item.url}`}>
+						<Link
+							href={item.url}
+							legacyBehavior
+							passHref
+							target={item.target}
 						>
-							About
-						</NavigationMenuLink>
-					</Link>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<Link href='/docs' legacyBehavior passHref>
-						<NavigationMenuLink
-							className={navigationMenuTriggerStyle()}
-						>
-							References
-						</NavigationMenuLink>
-					</Link>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<Link href='/docs' legacyBehavior passHref>
-						<NavigationMenuLink
-							className={navigationMenuTriggerStyle()}
-						>
-							Contact
-						</NavigationMenuLink>
-					</Link>
-				</NavigationMenuItem>
+							<NavigationMenuLink
+								className={navigationMenuTriggerStyle()}
+							>
+								{item.name}
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+				))}
 			</NavigationMenuList>
 		</NavigationMenu>
 	);
