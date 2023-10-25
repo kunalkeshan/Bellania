@@ -30,7 +30,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ productCategory }) => {
 		<NavigationMenu>
 			<NavigationMenuList className='flex flex-col lg:flex-row'>
 				<NavigationMenuItem>
-					<Link href='/docs' legacyBehavior passHref>
+					<Link href='/' legacyBehavior passHref>
 						<NavigationMenuLink
 							className={navigationMenuTriggerStyle()}
 						>

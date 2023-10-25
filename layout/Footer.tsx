@@ -11,10 +11,7 @@ type FooterProps = React.ComponentProps<'footer'> & {
 
 const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 	return (
-		<div
-			id='contact'
-			className='w-full h-full bg-app-primary text-white p-4 md:px-16 md:pt-16 lg:'
-		>
+		<footer className='w-full h-full bg-app-primary text-white p-4 md:px-16 md:pt-16 lg:'>
 			<div className='lg:flex w-full justify-between'>
 				<div className='mb-8 flex flex-col gap-4'>
 					<h1 className='font-semibold text-2xl'>Bellania</h1>
@@ -92,7 +89,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					Copyright &copy; {new Date().getFullYear()} Bellania
 				</p>
 			</div>
-		</div>
+		</footer>
 	);
 };
 

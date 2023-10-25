@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 type ShowcaseProps = React.ComponentProps<'section'> & {
 	categories: ProductCategory[];
@@ -20,11 +21,14 @@ const Showcase: React.FC<ShowcaseProps> = ({ categories }) => {
 							}}
 							className='w-full max-h-[28rem] group bg-no-repeat cursor-pointer bg-cover bg-center rounded aspect-[9/16]'
 						>
-							<div className='bg-gradient-to-t from-black/80 p-8 lg:opacity-0 transition-all duration-300 via-transparent lg:group-hover:opacity-100 flex to-transparent w-full h-full rounded text-center'>
+							<Link
+								href={`/products/${category.slug}`}
+								className='bg-gradient-to-t from-black/80 p-8 lg:opacity-0 transition-all duration-300 via-transparent lg:group-hover:opacity-100 flex to-transparent w-full h-full rounded text-center'
+							>
 								<div className='mt-auto w-full text-white text-xl'>
 									{category.title}
 								</div>
-							</div>
+							</Link>
 						</li>
 					))}
 				</ul>
