@@ -9,45 +9,17 @@ import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, EffectFade, Autoplay, Navigation } from 'swiper/modules';
-// import Carousel from 'react-multi-carousel';
-// import 'react-multi-carousel/lib/styles.css';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const slides = [
-	{
-		art: '/images/hero/1.jpg',
-	},
-	{
-		art: '/images/hero/2.jpg',
-	},
-	{
-		art: '/images/hero/3.jpg',
-	},
-	{
-		art: '/images/hero/1.jpg',
-	},
-	{
-		art: '/images/hero/2.jpg',
-	},
-	{
-		art: '/images/hero/3.jpg',
-	},
-	{
-		art: '/images/hero/1.jpg',
-	},
-	{
-		art: '/images/hero/2.jpg',
-	},
-	{
-		art: '/images/hero/3.jpg',
-	},
-];
+type HeroProps = React.ComponentProps<'section'> & {
+	sliderImages: SliderImage[];
+};
 
-export default function Hero() {
+const Hero: React.FC<HeroProps> = ({ sliderImages }) => {
 	return (
 		<section className='w-full h-fit'>
 			<Swiper
@@ -68,7 +40,7 @@ export default function Hero() {
 				effect='fade'
 				loop={true}
 			>
-				{slides.map((image, idx) => {
+				{sliderImages.map((item, idx) => {
 					return (
 						<SwiperSlide key={idx} className=''>
 							<Image
@@ -76,8 +48,8 @@ export default function Hero() {
 								width={450}
 								height={350}
 								key={idx}
-								src={image.art}
-								alt=''
+								src={item.image}
+								alt={item.alt ?? ''}
 								unoptimized
 							/>
 						</SwiperSlide>
@@ -86,4 +58,6 @@ export default function Hero() {
 			</Swiper>
 		</section>
 	);
-}
+};
+
+export default Hero;

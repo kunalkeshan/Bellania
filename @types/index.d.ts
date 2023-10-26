@@ -17,3 +17,11 @@ type Product = Readonly<{
 	alt?: string;
 	category: ProductCategory;
 }>;
+
+type SliderImage = Readonly<{
+	_id: string;
+	title: string;
+	category: ProductCategory;
+	image: string;
+	alt?: string;
+}>;
