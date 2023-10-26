@@ -5,6 +5,8 @@ type ProductCategory = Readonly<{
 	description: string;
 	image: string;
 	alt?: string;
+	cover: string;
+	coverAlt?: string;
 }>;
 
 type Product = Readonly<{
