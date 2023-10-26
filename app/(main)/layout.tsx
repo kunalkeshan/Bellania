@@ -2,6 +2,7 @@ import Footer from '@/layout/Footer';
 import Navbar from '@/layout/Navbar';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { productCategoryQuery } from '@/sanity/lib/queries';
+import { Toaster } from '@/components/ui/toaster';
 
 export default async function RootLayout({
 	children,
@@ -17,6 +18,7 @@ export default async function RootLayout({
 			<Navbar productCategory={productCategory} />
 			<main>{children}</main>
 			<Footer productCategory={productCategory} />
+			<Toaster />
 		</>
 	);
 }
