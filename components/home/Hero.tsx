@@ -5,95 +5,85 @@
 'use client';
 
 // Dependencies
-import * as React from 'react';
+import React from 'react';
 import Image from 'next/image';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, EffectFade, Autoplay, Navigation } from 'swiper/modules';
+// import Carousel from 'react-multi-carousel';
+// import 'react-multi-carousel/lib/styles.css';
 
-const works = [
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const slides = [
 	{
-		artist: 'Ornella Binni',
 		art: '/images/hero/1.jpg',
 	},
 	{
-		artist: 'Tom Byrom',
 		art: '/images/hero/2.jpg',
 	},
 	{
-		artist: 'Vladimir Malyavko',
 		art: '/images/hero/3.jpg',
 	},
 	{
-		artist: 'Ornella Binni',
 		art: '/images/hero/1.jpg',
 	},
 	{
-		artist: 'Tom Byrom',
 		art: '/images/hero/2.jpg',
 	},
 	{
-		artist: 'Vladimir Malyavko',
 		art: '/images/hero/3.jpg',
 	},
 	{
-		artist: 'Ornella Binni',
 		art: '/images/hero/1.jpg',
 	},
 	{
-		artist: 'Tom Byrom',
 		art: '/images/hero/2.jpg',
 	},
 	{
-		artist: 'Vladimir Malyavko',
 		art: '/images/hero/3.jpg',
 	},
 ];
 
-const responsive = {
-	desktop: {
-		breakpoint: { max: 3000, min: 1024 },
-		items: 1,
-	},
-	tablet: {
-		breakpoint: { max: 1024, min: 464 },
-		items: 1,
-	},
-	mobile: {
-		breakpoint: { max: 464, min: 0 },
-		items: 1,
-	},
-};
-
 export default function Hero() {
 	return (
 		<section className='w-full h-fit'>
-			<Carousel
-				responsive={responsive}
-				ssr
-				autoPlay
-				infinite
-				slidesToSlide={1}
-				itemClass='image-item'
-				deviceType={''}
-				autoPlaySpeed={2000}
-				customRightArrow={<div></div>}
-				customLeftArrow={<div></div>}
-				transitionDuration={500}
-				centerMode={true}
+			<Swiper
+				slidesPerView={1}
+				spaceBetween={30}
+				centeredSlides={true}
+				navigation={true}
+				pagination={{
+					dynamicBullets: true,
+					clickable: true,
+				}}
+				autoplay={{
+					delay: 2500,
+					disableOnInteraction: false,
+				}}
+				modules={[Pagination, Autoplay, Navigation, EffectFade]}
+				className='mySwiper'
+				effect='fade'
+				loop={true}
 			>
-				{works.map((image, idx) => {
+				{slides.map((image, idx) => {
 					return (
-						<Image
-							className='w-screen aspect-[9/16] md:aspect-square lg:aspect-video h-full object-cover'
-							width={450}
-							height={350}
-							key={idx}
-							src={image.art}
-							alt={image.artist}
-						/>
+						<SwiperSlide key={idx} className=''>
+							<Image
+								className='w-full aspect-[9/16] md:aspect-square lg:aspect-video h-auto object-cover'
+								width={450}
+								height={350}
+								key={idx}
+								src={image.art}
+								alt=''
+								unoptimized
+							/>
+						</SwiperSlide>
 					);
 				})}
-			</Carousel>
+			</Swiper>
 		</section>
 	);
 }
