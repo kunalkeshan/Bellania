@@ -65,10 +65,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
 					style={{ backgroundImage: `url('${category.cover}')` }}
 					className='w-full max-h-[28rem] bg-no-repeat bg-cover bg-center aspect-video'
 				>
-					<div className='bg-gradient-to-t from-black/50 p-8 flex justify-center items-center to-black/50 w-full h-full text-center'>
-						<h1 className='text-white text-2xl md:text-3xl lg:text-4xl'>
+					<div className='bg-gradient-to-t text-white from-black/50 p-8 flex flex-col gap-2 justify-center items-center to-black/50 w-full h-full text-center'>
+						<h1 className=' text-2xl md:text-3xl lg:text-4xl'>
 							{category.title}
 						</h1>
+						<p className='text-sm md:text-base lg:text-lg max-w-3xl'>
+							{category.description}
+						</p>
 					</div>
 				</div>
 			</section>
@@ -93,7 +96,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 										{product.title}
 									</h1>
 									<p className='text-slate-500'>
-										{product.description}
+										{product?.description}
 									</p>
 								</div>
 							</div>
