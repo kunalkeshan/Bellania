@@ -29,7 +29,14 @@ const COMMON_NAVIGATION: NavdataCollection = [
 export const NAVBAR_NAVIGATION = [...COMMON_NAVIGATION];
 
 export const FOOTER_NAVIGATION = {
-	Information: [...COMMON_NAVIGATION],
+	Information: [
+		{
+			name: 'Home',
+			url: '/',
+			target: '_self',
+		},
+		...COMMON_NAVIGATION,
+	],
 	Legal: [
 		{
 			name: 'Terms & Conditions',

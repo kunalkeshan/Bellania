@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import NavMenu from './NavMenu';
 import SheetMenu from './SheetMenu';
+import Link from 'next/link';
 
 type NavbarProps = React.ComponentProps<'nav'> & {
 	productCategory: ProductCategory[];
@@ -12,7 +13,7 @@ type NavbarProps = React.ComponentProps<'nav'> & {
 const Navbar: React.FC<NavbarProps> = ({ productCategory }) => {
 	return (
 		<nav className='w-full z-50 bg-white h-[5rem] sticky top-0 flex justify-between items-center p-4 md:px-16 lg:max-7xl lg:mx-auto'>
-			<div>
+			<Link href={'/'} className='block'>
 				<Image
 					src='/images/logo.png'
 					alt='logo'
@@ -20,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ productCategory }) => {
 					width={128}
 					height={77}
 				/>
-			</div>
+			</Link>
 			<div className='lg:hidden'>
 				<SheetMenu productCategory={productCategory} />
 			</div>

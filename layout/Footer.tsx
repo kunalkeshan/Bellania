@@ -14,7 +14,9 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 		<footer className='w-full h-full bg-app-primary text-white p-4 md:px-16 md:pt-16 lg:'>
 			<div className='lg:flex w-full justify-between'>
 				<div className='mb-8 flex flex-col gap-4'>
-					<h1 className='font-semibold text-2xl'>Bellania</h1>
+					<Link href={'/'} className='font-semibold text-2xl'>
+						Bellania
+					</Link>
 					<div className='flex items-center gap-1'>
 						<MapPin />
 						<p className='text-sm'>Your Location</p>

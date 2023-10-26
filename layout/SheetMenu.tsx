@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { NavigationMenuLink } from '@/components/ui/navigation-menu';
 import {
@@ -19,8 +19,14 @@ type SheetMenuProps = React.ComponentProps<'div'> & {
 };
 
 const SheetMenu: React.FC<SheetMenuProps> = ({ productCategory }) => {
+	const [open, setOpen] = useState(false);
+
+	const handleCloseSheet = () => {
+		setOpen(false);
+	};
+
 	return (
-		<Sheet>
+		<Sheet open={open} onOpenChange={setOpen}>
 			<SheetTrigger>
 				<Menu />
 			</SheetTrigger>
@@ -28,7 +34,10 @@ const SheetMenu: React.FC<SheetMenuProps> = ({ productCategory }) => {
 				<SheetHeader>
 					<SheetTitle>Bellania</SheetTitle>
 					<SheetDescription className='w-full min-h-screen overflow-y-scroll'>
-						<NavMenu productCategory={productCategory} />
+						<NavMenu
+							productCategory={productCategory}
+							handleCloseSheet={handleCloseSheet}
+						/>
 					</SheetDescription>
 				</SheetHeader>
 			</SheetContent>

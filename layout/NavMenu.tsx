@@ -23,13 +23,19 @@ import { NAVBAR_NAVIGATION } from '@/constants/navigation';
 
 type NavMenuProps = React.ComponentProps<'div'> & {
 	productCategory: ProductCategory[];
+	handleCloseSheet?: () => void;
 };
 
-const NavMenu: React.FC<NavMenuProps> = ({ productCategory }) => {
+const NavMenu: React.FC<NavMenuProps> = ({
+	productCategory,
+	handleCloseSheet,
+}) => {
 	return (
 		<NavigationMenu>
 			<NavigationMenuList className='flex flex-col lg:flex-row'>
-				<NavigationMenuItem>
+				<NavigationMenuItem
+					onClick={handleCloseSheet && handleCloseSheet}
+				>
 					<Link href='/' legacyBehavior passHref>
 						<NavigationMenuLink
 							className={navigationMenuTriggerStyle()}
@@ -48,6 +54,9 @@ const NavMenu: React.FC<NavMenuProps> = ({ productCategory }) => {
 									key={`nav-menu-1-${categoroy.slug}`}
 									title={categoroy.title}
 									href={`/products/${categoroy.slug}`}
+									onClick={
+										handleCloseSheet && handleCloseSheet
+									}
 								>
 									{/* {categoroy.description} */}
 								</ListItem>
@@ -66,6 +75,9 @@ const NavMenu: React.FC<NavMenuProps> = ({ productCategory }) => {
 										key={`nav-menu-2-${categoroy.slug}`}
 										title={categoroy.title}
 										href={`/products/${categoroy.slug}`}
+										onClick={
+											handleCloseSheet && handleCloseSheet
+										}
 									>
 										{/* {categoroy.description} */}
 									</ListItem>
@@ -75,7 +87,10 @@ const NavMenu: React.FC<NavMenuProps> = ({ productCategory }) => {
 					</Accordion>
 				</NavigationMenuItem>
 				{NAVBAR_NAVIGATION.map((item) => (
-					<NavigationMenuItem key={`nav-item-${item.url}`}>
+					<NavigationMenuItem
+						key={`nav-item-${item.url}`}
+						onClick={handleCloseSheet && handleCloseSheet}
+					>
 						<Link
 							href={item.url}
 							legacyBehavior
