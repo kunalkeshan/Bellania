@@ -24,12 +24,12 @@ export const productCategoryPathsQuery = groq`*[_type == "productCategory" &&  d
 
 // Get all category
 export const productCategoryQuery = groq`*[_type == "productCategory" && defined(slug.current)]{
-  _id, title, "slug": slug.current, description, "image": image.asset->url, "alt": image.alt, "cover": cover.asset->url, "coverAlt: cover.alt
+  _id, title, "slug": slug.current, description, "image": image.asset->url, "alt": image.alt, "cover": cover.asset->url, "coverAlt": cover.alt
 }`;
 
 // Get category by slug
 export const productCategoryBySlugQuery = groq`*[_type == "productCategory" && slug.current == $slug][0]{
-  _id, title, "slug": slug.current, description, "image": image.asset->url, "alt": image.alt, "cover": cover.asset->url, "coverAlt: cover.alt
+  _id, title, "slug": slug.current, description, "image": image.asset->url, "alt": image.alt, "cover": cover.asset->url, "coverAlt": cover.alt
 }`;
 
 // Get all products
