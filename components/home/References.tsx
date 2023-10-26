@@ -11,7 +11,7 @@ const References = () => {
 					<div
 						key={idx}
 						style={{ backgroundImage: `url('/images/hero/1.jpg')` }}
-						className='w-full max-h-[28rem] group bg-no-repeat cursor-pointer bg-cover bg-center rounded aspect-video'
+						className='w-full max-h-[28rem] group bg-no-repeat bg-cover bg-center rounded aspect-video'
 					/>
 				))}
 			</div>

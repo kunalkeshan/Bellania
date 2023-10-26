@@ -9,7 +9,15 @@ const app = Raleway({
 
 export const metadata: Metadata = {
 	title: 'Bellania',
-	description: '',
+	openGraph: {
+		title: 'Bellania',
+		images: ['/images/hero/1.jpg'],
+	},
+	twitter: {
+		card: 'summary',
+		images: ['/images/hero/1.jpg'],
+		title: 'Bellania',
+	},
 };
 
 export default async function RootLayout({
