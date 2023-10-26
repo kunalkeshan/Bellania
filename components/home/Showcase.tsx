@@ -4,7 +4,8 @@
 
 // Dependencies
 import React from 'react';
-import Link from 'next/link';
+import CategoryCard from '../cards/CategoryCard';
+import EmptyStateCard from '../cards/EmptyStateCard';
 
 type ShowcaseProps = React.ComponentProps<'section'> & {
 	categories: ProductCategory[];
@@ -17,26 +18,21 @@ const Showcase: React.FC<ShowcaseProps> = ({ categories }) => {
 				<h2 className='text-2xl md:text-3xl lg:text-4xl font-medium'>
 					Showcase
 				</h2>
-				<ul className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
-					{categories.map((category) => (
-						<li
-							key={`showcase-item-${category.slug}`}
-							style={{
-								backgroundImage: `url(${category.image})`,
-							}}
-							className='w-full max-h-[28rem] group bg-no-repeat cursor-pointer bg-cover bg-center rounded aspect-[9/16]'
-						>
-							<Link
-								href={`/products/${category.slug}`}
-								className='bg-gradient-to-t from-black/80 p-8 lg:opacity-0 transition-all duration-300 via-transparent lg:group-hover:opacity-100 flex to-transparent w-full h-full rounded text-center'
-							>
-								<div className='mt-auto w-full text-white text-xl'>
-									{category.title}
-								</div>
-							</Link>
-						</li>
-					))}
-				</ul>
+				{categories && categories.length > 0 ? (
+					<ul className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+						{categories.map((category) => (
+							<CategoryCard
+								category={category}
+								key={`category-${category._id}`}
+							/>
+						))}
+					</ul>
+				) : (
+					<EmptyStateCard
+						title='No categories to be viewed yet.'
+						className='mt-8'
+					/>
+				)}
 			</div>
 		</section>
 	);

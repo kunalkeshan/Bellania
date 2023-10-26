@@ -6,6 +6,7 @@ import { type SchemaTypeDefinition } from 'sanity';
 // import author from './schemas/author'
 import product from './schemas/product';
 import productCategory from './schemas/productCategory';
+import slider from './schemas/slider';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -15,5 +16,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		// blockContent,
 		product,
 		productCategory,
+		slider,
 	],
 };

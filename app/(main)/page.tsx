@@ -3,20 +3,24 @@ import Hero from '@/components/home/Hero';
 import References from '@/components/home/References';
 import Showcase from '@/components/home/Showcase';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
-import { productCategoryQuery } from '@/sanity/lib/queries';
+import { productCategoryQuery, sliderImagesQuery } from '@/sanity/lib/queries';
 
 async function Home() {
-
-	const categories = await sanityFetch<ProductCategory[]>({ query: productCategoryQuery });
+	const categories = await sanityFetch<ProductCategory[]>({
+		query: productCategoryQuery,
+	});
+	const sliderImages = await sanityFetch<SliderImage[]>({
+		query: sliderImagesQuery,
+	});
 
 	return (
-        <div className="">
-            <Hero />
-            <Showcase categories={categories} />
-            <References />
-            <Contact />
-        </div>
-    );
+		<div className=''>
+			<Hero sliderImages={sliderImages} />
+			<Showcase categories={categories} />
+			<References />
+			<Contact />
+		</div>
+	);
 }
 
 export default Home;

@@ -8,8 +8,10 @@ import {
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { client } from '@/sanity/lib/client';
 import type { Metadata, ResolvingMetadata } from 'next';
-import Image from 'next/image';
 import { redirect } from 'next/navigation';
+import ProductCard from '@/components/cards/ProductCard';
+import Image from 'next/image';
+import EmptyStateCard from '@/components/cards/EmptyStateCard';
 
 export async function generateStaticParams() {
 	const productCategories = await client.fetch(productCategoryPathsQuery);
@@ -82,31 +84,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
 			</section>
 			<section className='w-full h-full'>
 				<div className='p-4 md:px-16 lg:max-w-7xl lg:mx-auto xl:max-w-8xl py-12 md:py-16'>
-					<ul className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-						{products.map((product) => (
-							<li
-								key={`product-${product.title}`}
-								className='w-full h-full flex flex-col gap-4'
-							>
-								<Image
-									className='w-full max-h-[28rem] rounded object-cover'
-									src={product.image}
-									unoptimized
-									alt={product.alt ?? ''}
-									width={100}
-									height={100}
+					{products && products.length > 0 ? (
+						<ul className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+							{products.map((product) => (
+								<ProductCard
+									product={product}
+									key={`product-${product._id}`}
 								/>
-								<div className='flex flex-col gap-2'>
-									<h2 className='text-xl font-medium'>
-										{product.title}
-									</h2>
-									<p className='text-slate-500'>
-										{product?.description}
-									</p>
-								</div>
-							</li>
-						))}
-					</ul>
+							))}
+						</ul>
+					) : (
+						<EmptyStateCard
+							title={`No products in ${category.title} yet!`}
+						/>
+					)}
 				</div>
 			</section>
 		</>
