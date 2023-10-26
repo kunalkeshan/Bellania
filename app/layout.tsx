@@ -1,8 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Josefin_Sans } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 
-const app = Josefin_Sans({
+const app = Raleway({
 	subsets: ['latin'],
 	variable: '--font-app',
 });

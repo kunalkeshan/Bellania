@@ -55,5 +55,25 @@ export default defineType({
 				},
 			],
 		}),
+		defineField({
+			name: 'cover',
+			title: 'Cover Image',
+			description:
+				'Upload an cover image of your category. This image will be displayed in the products page for that category',
+			type: 'image',
+			options: {
+				hotspot: true,
+			},
+			validation: (Rule) => Rule.required(),
+			fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alternative Text',
+					description:
+						"Provide alternative text for the category cover image. This text is essential for accessibility and helps describe the image when it can't be seen.",
+				},
+			],
+		}),
 	],
 });
