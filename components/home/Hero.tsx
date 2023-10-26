@@ -22,40 +22,42 @@ type HeroProps = React.ComponentProps<'section'> & {
 const Hero: React.FC<HeroProps> = ({ sliderImages }) => {
 	return (
 		<section className='w-full h-fit'>
-			<Swiper
-				slidesPerView={1}
-				spaceBetween={30}
-				centeredSlides={true}
-				navigation={true}
-				pagination={{
-					dynamicBullets: true,
-					clickable: true,
-				}}
-				autoplay={{
-					delay: 2500,
-					disableOnInteraction: false,
-				}}
-				modules={[Pagination, Autoplay, Navigation, EffectFade]}
-				className='mySwiper'
-				effect='fade'
-				loop={true}
-			>
-				{sliderImages.map((item, idx) => {
-					return (
-						<SwiperSlide key={idx} className=''>
-							<Image
-								className='w-full aspect-[9/16] md:aspect-square lg:aspect-video h-auto object-cover'
-								width={450}
-								height={350}
-								key={item._id}
-								src={item.image}
-								alt={item.alt ?? ''}
-								unoptimized
-							/>
-						</SwiperSlide>
-					);
-				})}
-			</Swiper>
+			{sliderImages && sliderImages.length > 0 ? (
+				<Swiper
+					slidesPerView={1}
+					spaceBetween={30}
+					centeredSlides={true}
+					navigation={true}
+					pagination={{
+						dynamicBullets: true,
+						clickable: true,
+					}}
+					autoplay={{
+						delay: 2500,
+						disableOnInteraction: false,
+					}}
+					modules={[Pagination, Autoplay, Navigation, EffectFade]}
+					className='mySwiper'
+					effect='fade'
+					loop={true}
+				>
+					{sliderImages.map((item, idx) => {
+						return (
+							<SwiperSlide key={idx} className=''>
+								<Image
+									className='w-full aspect-[9/16] md:aspect-square lg:aspect-video h-auto object-cover'
+									width={450}
+									height={350}
+									key={item._id}
+									src={item.image}
+									alt={item.alt ?? ''}
+									unoptimized
+								/>
+							</SwiperSlide>
+						);
+					})}
+				</Swiper>
+			) : null}
 		</section>
 	);
 };

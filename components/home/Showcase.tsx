@@ -5,6 +5,7 @@
 // Dependencies
 import React from 'react';
 import CategoryCard from '../cards/CategoryCard';
+import EmptyStateCard from '../cards/EmptyStateCard';
 
 type ShowcaseProps = React.ComponentProps<'section'> & {
 	categories: ProductCategory[];
@@ -17,14 +18,21 @@ const Showcase: React.FC<ShowcaseProps> = ({ categories }) => {
 				<h2 className='text-2xl md:text-3xl lg:text-4xl font-medium'>
 					Showcase
 				</h2>
-				<ul className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
-					{categories.map((category) => (
-						<CategoryCard
-							category={category}
-							key={`category-${category._id}`}
-						/>
-					))}
-				</ul>
+				{categories && categories.length > 0 ? (
+					<ul className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+						{categories.map((category) => (
+							<CategoryCard
+								category={category}
+								key={`category-${category._id}`}
+							/>
+						))}
+					</ul>
+				) : (
+					<EmptyStateCard
+						title='No categories to be viewed yet.'
+						className='mt-8'
+					/>
+				)}
 			</div>
 		</section>
 	);
