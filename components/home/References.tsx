@@ -1,3 +1,8 @@
+/**
+ * References Component
+ */
+
+// Dependencies
 import React from 'react';
 
 const References = () => {

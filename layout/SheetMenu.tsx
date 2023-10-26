@@ -1,5 +1,10 @@
+/**
+ * SheetMenu Component
+ */
+
 'use client';
 
+// Dependencies
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { NavigationMenuLink } from '@/components/ui/navigation-menu';

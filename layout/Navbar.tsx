@@ -1,5 +1,10 @@
+/**
+ * Navbar Component
+ */
+
 'use client';
 
+// Dependencies
 import React from 'react';
 import Image from 'next/image';
 import NavMenu from './NavMenu';

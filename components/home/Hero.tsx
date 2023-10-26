@@ -1,4 +1,10 @@
+/**
+ * Hero Component
+ */
+
 'use client';
+
+// Dependencies
 import * as React from 'react';
 import Image from 'next/image';
 import Carousel from 'react-multi-carousel';

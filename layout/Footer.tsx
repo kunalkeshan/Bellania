@@ -1,5 +1,9 @@
+/**
+ * Footer Component
+ */
+
+// Dependencies
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { InstagramIcon, MailIcon, MapPin } from 'lucide-react';
@@ -26,10 +30,10 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 							target='_blank'
 							href={'https://instagram.com/user'}
 						>
-							<InstagramIcon className='hover:text-app-primary transition-all duration-300' />
+							<InstagramIcon className='hover:text-app-accent transition-all duration-300' />
 						</Link>
 						<Link href={'mailto:bellania@gmail.com'}>
-							<MailIcon className='hover:text-app-primary transition-all duration-300' />
+							<MailIcon className='hover:text-app-accent transition-all duration-300' />
 						</Link>
 					</div>
 				</div>
