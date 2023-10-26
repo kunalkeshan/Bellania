@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ sliderImages }) => {
 								className='w-full aspect-[9/16] md:aspect-square lg:aspect-video h-auto object-cover'
 								width={450}
 								height={350}
-								key={idx}
+								key={item._id}
 								src={item.image}
 								alt={item.alt ?? ''}
 								unoptimized

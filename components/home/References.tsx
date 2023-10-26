@@ -4,6 +4,7 @@
 
 // Dependencies
 import React from 'react';
+import ReferenceCard from '../cards/ReferenceCard';
 
 const References = () => {
 	return (
@@ -11,15 +12,11 @@ const References = () => {
 			<h2 className='text-2xl md:text-3xl lg:text-4xl font-medium'>
 				References
 			</h2>
-			<div className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+			<ul className='w-full mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
 				{[1, 2, 3].map((idx) => (
-					<div
-						key={idx}
-						style={{ backgroundImage: `url('/images/hero/1.jpg')` }}
-						className='w-full max-h-[28rem] group bg-no-repeat bg-cover bg-center rounded aspect-video'
-					/>
+					<ReferenceCard key={`reference-${idx}`} />
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };
