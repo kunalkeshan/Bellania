@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        app: ['var(--font-app)/* Josefin Sans */']
+      },
       colors: {
         app: {
           primary: '#f29faf',

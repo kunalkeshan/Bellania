@@ -1,8 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Josefin_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const app = Josefin_Sans({
+	subsets: ['latin'],
+	variable: '--font-app',
+});
 
 export const metadata: Metadata = {
 	title: 'Bellania',
@@ -16,7 +19,7 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className=''>{children}</body>
+			<body className={`${app.variable} font-app`}>{children}</body>
 		</html>
 	);
 }
