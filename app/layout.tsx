@@ -9,6 +9,7 @@ const app = Raleway({
 
 export const metadata: Metadata = {
 	title: 'Bellania',
+	metadataBase: new URL('https://bellania.vercel.app'),
 	openGraph: {
 		title: 'Bellania',
 		images: ['/images/hero/1.jpg'],

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
 			allow: '/',
 			disallow: ['/api/', '/studio/'],
 		},
-		sitemap: 'https://example.com/sitemap.xml',
+		sitemap: 'https://bellania.vercel.app/sitemap.xml',
 	};
 }

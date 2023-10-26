@@ -3,25 +3,25 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
 	return [
 		{
-			url: 'https://example.com',
+			url: 'https://bellania.vercel.app',
 			lastModified: new Date(),
 			changeFrequency: 'yearly',
 			priority: 1,
 		},
 		{
-			url: 'https://example.com/products',
+			url: 'https://bellania.vercel.app/products',
 			lastModified: new Date(),
 			changeFrequency: 'monthly',
 			priority: 0.8,
 		},
 		{
-			url: 'https://example.com/about',
+			url: 'https://bellania.vercel.app/about',
 			lastModified: new Date(),
 			changeFrequency: 'monthly',
 			priority: 0.7,
 		},
 		{
-			url: 'https://example.com/references',
+			url: 'https://bellania.vercel.app/references',
 			lastModified: new Date(),
 			changeFrequency: 'monthly',
 			priority: 0.5,
