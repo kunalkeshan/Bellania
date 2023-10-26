@@ -63,7 +63,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <main>
             <section>
                 <div
-                    style={{ backgroundImage: `url('/images/hero/1.jpg')` }}
+                    style={{ backgroundImage: `url('${category.cover}')` }}
                     className="w-full max-h-[28rem] bg-no-repeat bg-cover bg-center aspect-video"
                 >
                     <div className="bg-gradient-to-t from-black/50 p-8 flex justify-center items-center to-black/50 w-full h-full text-center">
