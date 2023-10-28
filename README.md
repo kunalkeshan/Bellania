@@ -4,8 +4,6 @@
 
 A lingerie showcase website built using Next.js, Tailwind CSS, and Sanity CMS. This project aims to provide a dynamic and visually appealing platform for showcasing lingerie products.
 
-## Features
-
 ## Getting Started
 
 To get started with the Bellania project, follow the steps below:
