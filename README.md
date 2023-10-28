@@ -1,4 +1,4 @@
-# Bellania Project Readme
+# Bellania
 
 ## Introduction
 
