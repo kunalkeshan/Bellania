@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bellania Project Readme
+
+## Introduction
+
+A lingerie showcase website built using Next.js, Tailwind CSS, and Sanity CMS. This project aims to provide a dynamic and visually appealing platform for showcasing lingerie products.
+
+## Features
 
 ## Getting Started
 
-First, run the development server:
+To get started with the Bellania project, follow the steps below:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Clone the Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Open a terminal or command prompt.
+2. Change the current working directory to the location where you want to clone the project.
+3. Run the following command to clone the project repository:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```bash
+    git clone https://github.com/kunalkeshan/Bellania
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Install Dependencies
 
-## Learn More
+1. Make sure you have installed pnpm globally. If not, you can install it using the following command:
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    npm install -g pnpm
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Change the current working directory to the project root directory.
+3. Run the following command to install all project dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    pnpm install
+    ```
 
-## Deploy on Vercel
+### Set Up Sanity CMS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Create a new Sanity project by following the instructions on the [Sanity website](https://www.sanity.io/docs/getting-started).
+2. Obtain the Sanity project ID and dataset name.
+3. Update the `.env.local` file with the following variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```dotenv
+    NEXT_PUBLIC_SANITY_PROJECT_ID=<sanity_project_id>
+    NEXT_PUBLIC_SANITY_DATASET=<sanity_dataset_name>
+    ```
+
+### Set Up Contact Form
+
+1. Obtain the Gmail email address and password that will be used to send contact form submissions.
+2. Update the `.env.local` file with the following variables:
+
+    ```dotenv
+    GMAIL_EMAIL=<gmail_email_address>
+    GMAIL_PASSWORD=<gmail_password>
+    ```
+
+3. Remove the `disabled` attribute from the `fieldset` tag wrapping the contact form inputs in [`Contact.tsx`](./components/home/Contact.tsx) component.
+
+## How to Contribute
+
+We welcome contributions to the Bellania project. If you would like to contribute, please follow the guidelines below:
+
+1. Fork the project repository on GitHub.
+2. Clone your forked repository to your local machine.
+3. Create a new branch for your feature or bug fix.
+4. Make your changes and ensure they follow the project's coding conventions.
+5. Write appropriate tests for your changes, if applicable.
+6. Commit your changes and push them to your forked repository.
+7. Submit a pull request, describing the changes you made and why they should be included in the main project.
+
+## License
+
+The Bellania project is licensed under [MIT License](LICENSE).
