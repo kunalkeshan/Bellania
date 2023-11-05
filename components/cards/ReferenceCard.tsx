@@ -1,13 +1,28 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-type ReferenceCardProps = React.ComponentProps<'li'>;
+type ReferenceCardProps = React.ComponentProps<'li'> & {
+	reference: Reference;
+};
 
-const ReferenceCard: React.FC<ReferenceCardProps> = () => {
+const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference }) => {
 	return (
-		<li
-			style={{ backgroundImage: `url('/images/hero/1.jpg')` }}
-			className='w-full max-h-[28rem] group bg-no-repeat bg-cover bg-center rounded aspect-video cursor-pointer hover:scale-[1.02] transition-all duration-300'
-		/>
+		<li className='group rounded'>
+			<Link
+				href={reference?.website ?? '#'}
+				className='w-full max-h-[28rem]'
+			>
+				<Image
+					src={reference.image}
+					alt={reference?.alt || ''}
+					width={100}
+					height={100}
+					className='w-full h-auto object-contain group-hover:scale-[1.02] transition-all duration-300'
+					unoptimized
+				/>
+			</Link>
+		</li>
 	);
 };
 

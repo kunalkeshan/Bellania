@@ -7,6 +7,7 @@ import { type SchemaTypeDefinition } from 'sanity';
 import product from './schemas/product';
 import productCategory from './schemas/productCategory';
 import slider from './schemas/slider';
+import reference from './schemas/referenceSource';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -17,5 +18,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		product,
 		productCategory,
 		slider,
+		reference,
 	],
 };

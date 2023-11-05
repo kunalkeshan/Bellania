@@ -25,3 +25,12 @@ type SliderImage = Readonly<{
 	image: string;
 	alt?: string;
 }>;
+
+type Reference = Readonly<{
+	_id: string;
+	title: string;
+	description?: string;
+	website?: string;
+	image: string;
+	alt?: string;
+}>;

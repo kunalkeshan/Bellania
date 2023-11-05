@@ -46,3 +46,13 @@ export const productsByCategoryQuery = groq`*[_type == "product" && references(*
 export const sliderImagesQuery = groq`*[_type == "slider"]{
   _id, title, "image": image.asset->url, "alt": image.alt, "category": productCategory->{title, description, "slug": slug.current}
 }`;
+
+// Get all references
+export const referencesQuery = groq`*[_type == "referenceSource"] {
+  _id,
+  title,
+  description,
+  website,
+  "image": image.asset->url,
+  "alt": image.alt
+}`;
