@@ -21,7 +21,7 @@ async function Home() {
 	});
 
 	return (
-		<div>
+		<div className=''>
 			<Hero sliderImages={sliderImages} />
 			<Showcase categories={categories} />
 			<References references={references} />
