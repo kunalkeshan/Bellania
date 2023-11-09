@@ -18,6 +18,8 @@ import {
 } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import NavMenu from './NavMenu';
+import Link from 'next/link';
+import Image from 'next/image';
 
 type SheetMenuProps = React.ComponentProps<'div'> & {
 	productCategory: ProductCategory[];
@@ -31,23 +33,33 @@ const SheetMenu: React.FC<SheetMenuProps> = ({ productCategory }) => {
 	};
 
 	return (
-		<Sheet open={open} onOpenChange={setOpen}>
-			<SheetTrigger>
-				<Menu />
-			</SheetTrigger>
-			<SheetContent className='w-full'>
-				<SheetHeader>
-					<SheetTitle>Bellania</SheetTitle>
-					<SheetDescription className='w-full min-h-screen overflow-y-scroll'>
-						<NavMenu
-							productCategory={productCategory}
-							handleCloseSheet={handleCloseSheet}
-						/>
-					</SheetDescription>
-				</SheetHeader>
-			</SheetContent>
-		</Sheet>
-	);
+        <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger>
+                <Menu />
+            </SheetTrigger>
+            <SheetContent className="w-full">
+                <SheetHeader>
+                    <SheetTitle className='mx-auto'>
+                        <Link href={"/"} className="block">
+                            <Image
+                                src="/images/logo.png"
+                                alt="logo"
+                                className="w-24"
+                                width={128}
+                                height={77}
+                            />
+                        </Link>
+                    </SheetTitle>
+                    <SheetDescription className="w-full min-h-screen overflow-y-scroll">
+                        <NavMenu
+                            productCategory={productCategory}
+                            handleCloseSheet={handleCloseSheet}
+                        />
+                    </SheetDescription>
+                </SheetHeader>
+            </SheetContent>
+        </Sheet>
+    );
 };
 
 export default SheetMenu;
