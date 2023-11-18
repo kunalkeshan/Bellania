@@ -22,8 +22,10 @@ module.exports = {
       },
       colors: {
         app: {
-          primary: '#f29faf',
-          accent: '#fdd6d3',
+          primary: '#cf2d71',
+          accent: '#f29faf',
+          // primary: '#f29faf',
+          // accent: '#fdd6d3',
           bg: '#fcf5ef'
         },
         border: "hsl(var(--border))",
