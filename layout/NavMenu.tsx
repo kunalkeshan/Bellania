@@ -36,7 +36,7 @@ const NavMenu: React.FC<NavMenuProps> = ({
 }) => {
 	return (
 		<NavigationMenu>
-			<NavigationMenuList className='flex flex-col lg:flex-row justify-start overflow-y-auto h-[calc(100vh-8rem)]'>
+			<NavigationMenuList className='flex flex-col lg:flex-row justify-start overflow-y-auto h-[calc(100vh-8rem)] lg:h-auto'>
 				<NavigationMenuItem
 					onClick={handleCloseSheet && handleCloseSheet}
 				>

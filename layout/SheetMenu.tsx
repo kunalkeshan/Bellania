@@ -50,7 +50,7 @@ const SheetMenu: React.FC<SheetMenuProps> = ({ productCategory }) => {
 							/>
 						</Link>
 					</SheetTitle>
-					<SheetDescription className='w-full'>
+					<SheetDescription className='w-full min-h-screen'>
 						<NavMenu
 							productCategory={productCategory}
 							handleCloseSheet={handleCloseSheet}
