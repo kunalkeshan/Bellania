@@ -89,3 +89,11 @@
 .swiper-pagination-bullet-active {
 	background-color: #fff !important;
 }
+
+::-webkit-scrollbar {
+	@apply w-1 bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-app-primary mix-blend-exclusion rounded-full;
+}
