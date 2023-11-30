@@ -72,8 +72,9 @@ const Contact = () => {
 	return (
 		<section id='contact' className='bg-white text-primary'>
 			<div className='w-full flex flex-col md:flex-col lg:max-w-7xl lg:mx-auto xl:max-w-8xl gap-4 p-4 md:px-16 pb-12 md:pb-16 lg:pb-32'>
-				<h1 className='text-2xl md:text-3xl lg:text-4xl font-medium'>
+				<h1 className='text-2xl md:text-3xl lg:text-4xl font-medium w-fit'>
 					Contact Us
+					<hr className='border-t-4 mt-1 border-t-app-primary rounded w-full' />
 				</h1>
 				<Form {...form}>
 					<form onSubmit={form.handleSubmit(onSubmit)} className=''>
@@ -165,7 +166,11 @@ const Contact = () => {
 									)}
 								/>
 								<div className='w-full md:w-fit'>
-									<Button disabled={submitting} type='submit'>
+									<Button
+										disabled={submitting}
+										type='submit'
+										className='bg-app-primary hover:bg-app-primary/80 transition-all duration-300'
+									>
 										{submitting ? (
 											<RotateCw
 												size={16}
