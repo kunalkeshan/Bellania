@@ -52,7 +52,9 @@ const NavMenu: React.FC<NavMenuProps> = ({
 					</Link>
 				</NavigationMenuItem>
 				<NavigationMenuItem className='hidden lg:block'>
-					<NavigationMenuTrigger>Products</NavigationMenuTrigger>
+					<NavigationMenuTrigger className='hover:bg-app-primary/20 hover:text-accent-foreground focus:bg-app-primary/40 focus:text-accent-foreground transition-colors data-[state=open]:bg-app-primary/20 data-[state=close]:bg-inherit'>
+						Products
+					</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className='grid w-[400px] gap-3 p-4 grid-cols-3'>
 							{productCategory.map((categoroy) => (
@@ -74,7 +76,9 @@ const NavMenu: React.FC<NavMenuProps> = ({
 				<NavigationMenuItem className='lg:hidden'>
 					<Accordion type='multiple' className='w-full'>
 						<AccordionItem value='item-1'>
-							<AccordionTrigger>Products</AccordionTrigger>
+							<AccordionTrigger className='hover:bg-app-primary/20 hover:text-accent-foreground focus:bg-app-primary/40 focus:text-accent-foreground transition-colors'>
+								Products
+							</AccordionTrigger>
 							<AccordionContent>
 								{productCategory.map((categoroy) => (
 									<ListItem
