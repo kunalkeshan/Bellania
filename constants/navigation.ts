@@ -40,12 +40,12 @@ export const FOOTER_NAVIGATION = {
 	Legal: [
 		{
 			name: 'Terms & Conditions',
-			url: '#',
+			url: '/terms',
 			target: '_self',
 		},
 		{
 			name: 'Privacy Policy',
-			url: '#',
+			url: '/privacy',
 			target: '_self',
 		},
 	],
