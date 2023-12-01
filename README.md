@@ -60,7 +60,7 @@ To get started with the Bellania project, follow the steps below:
 
 ### Set Up Contact Form
 
-1. Obtain the Gmail email address and password that will be used to send contact form submissions. Your gmail passoword will need to be an app password, to obtain it follow these [steps mentioned by google to get app passoword](https://support.google.com/accounts/answer/185833?hl=en).
+1. Obtain the Gmail email address and password that will be used to send contact form submissions. Your gmail passoword will need to be an app password, to obtain it follow these [steps mentioned by google to get app password](https://support.google.com/accounts/answer/185833?hl=en).
 2. Update the `.env.local` file with the following variables:
 
     ```dotenv
