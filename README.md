@@ -44,9 +44,23 @@ To get started with the Bellania project, follow the steps below:
     NEXT_PUBLIC_SANITY_DATASET=<sanity_dataset_name>
     ```
 
+4. Import Data
+
+    Use the Sanity CLI to import data. Suppose you have a shared `production.tar.gz` file (or contact code maintainers to get access to the latest production dataset).
+
+    Open your terminal and navigate to your project directory.
+
+    Run the following command, replacing ../production.tar.gz with the path to your tar file:
+
+    ```bash
+    sanity dataset import ../production.tar.gz production
+    ```
+
+    This command imports the specified tar file into the 'production' dataset. Reference: [https://www.sanity.io/docs/migrating-data](https://www.sanity.io/docs/migrating-data).
+
 ### Set Up Contact Form
 
-1. Obtain the Gmail email address and password that will be used to send contact form submissions.
+1. Obtain the Gmail email address and password that will be used to send contact form submissions. Your gmail passoword will need to be an app password, to obtain it follow these [steps mentioned by google to ge app passoword](https://support.google.com/accounts/answer/185833?hl=en).
 2. Update the `.env.local` file with the following variables:
 
     ```dotenv
