@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ productCategory }) => {
 		<nav className='w-full z-50 bg-white sticky top-0 flex justify-between items-center h-[8rem] p-4 md:px-16 lg:max-7xl lg:mx-auto'>
 			<Link href={'/'} className='block'>
 				<Image
-					src='/images/logo.png'
+					src='/images/logo-no-bg.png'
 					alt='logo'
 					className='w-24'
 					width={128}

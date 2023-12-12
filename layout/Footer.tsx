@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 						<Image
 							src='/images/logo-light.png'
 							alt='logo'
-							className='w-24 filter brightness-0 invert'
+							className='w-24'
 							width={128}
 							height={77}
 						/>
