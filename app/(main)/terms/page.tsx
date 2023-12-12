@@ -19,7 +19,7 @@ function TermsAndConditionsPage() {
 					>
 						Kunal Keshan
 					</Link>{' '}
-					&
+					&{' '}
 					<Link
 						href={'#'}
 						target='_blank'
