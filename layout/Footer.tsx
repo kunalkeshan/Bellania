@@ -98,8 +98,63 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 				</div>
 			</div>
 			<div className='pt-4 flex flex-col lg:flex-row lg:gap-4 items-center mt-2 border-t border-app-primary'>
-				<p className='text-xs py-2 lg:mt-[1px]'>
-					Copyright &copy; {new Date().getFullYear()} Bellania
+				<p className='text-xs py-2 lg:mt-[1px] [&>a]:underline [&>a]:underline-offset-2 hover:[&>a]:underline-offset-1 [&>a]:transition-all'>
+					Copyright &copy; 2023 Bellania | Design & Developed by{' '}
+					<Link
+						href={'https://kunalkeshan.dev'}
+						target='_blank'
+						title='Never gonna give you up 😜'
+					>
+						Kunal Keshan
+					</Link>{' '}
+					&{' '}
+					<Link
+						href={'https://surendarpd.vercel.app/'}
+						target='_blank'
+						title='Pro Dev'
+					>
+						Surendar PD
+					</Link>{' '}
+					| Open Source on{' '}
+					<Link
+						href={'https://github.com/kunalkeshan/Bellania'}
+						target='_blank'
+						title='Access code to this website'
+					>
+						GitHub
+					</Link>{' '}
+					| Powered by{' '}
+					<Link
+						href={'https://nextjs.org/'}
+						target='_blank'
+						title='Full-Stack Framework to build web apps'
+					>
+						Next.js
+					</Link>{' '}
+					+{' '}
+					<Link
+						href={'https://tailwindcss.com/'}
+						target='_blank'
+						title='CSS Utility Class Styling'
+					>
+						Tailwind CSS
+					</Link>{' '}
+					+
+					<Link
+						href={'https://ui.shadcn.com/'}
+						target='_blank'
+						title='Component Library'
+					>
+						Shadcn-UI
+					</Link>{' '}
+					+{' '}
+					<Link
+						href={'https://www.sanity.io/'}
+						target='_blank'
+						title='Content Management System'
+					>
+						Sanity
+					</Link>
 				</p>
 			</div>
 		</footer>
