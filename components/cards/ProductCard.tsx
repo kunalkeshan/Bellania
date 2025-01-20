@@ -9,6 +9,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, ...props }) => {
 	return (
 		<li className='w-full h-full flex flex-col gap-4' {...props}>
 			<Image
+				loading='lazy'
 				className='w-full max-h-[28rem] rounded object-cover'
 				src={product.image}
 				unoptimized

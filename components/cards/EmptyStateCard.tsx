@@ -16,6 +16,7 @@ const EmptyStateCard: React.FC<EmptyStateCardProps> = ({ title, ...props }) => {
 		>
 			<div className='overflow-hidden'>
 				<Image
+					loading='lazy'
 					src='/images/lost.svg'
 					width={100}
 					height={100}

@@ -15,6 +15,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference }) => {
 				className='w-full max-h-[28rem]'
 			>
 				<Image
+					loading='lazy'
 					src={reference.image}
 					alt={reference?.alt || ''}
 					width={100}

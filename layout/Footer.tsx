@@ -25,6 +25,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 						className='font-semibold text-2xl'
 					>
 						<Image
+							loading='lazy'
 							src='/images/logo-light.png'
 							alt='logo'
 							className='w-24'
