@@ -15,6 +15,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, ...props }) => {
 			className='w-full max-h-[28rem] group bg-no-repeat cursor-pointer bg-cover bg-center rounded aspect-[9/16]'
 		>
 			<Link
+				prefetch={false}
 				href={`/products/${category.slug}`}
 				className='bg-gradient-to-t from-black/80 p-8 lg:opacity-0 transition-all duration-300 via-transparent lg:group-hover:opacity-100 flex to-transparent w-full h-full rounded text-center'
 			>

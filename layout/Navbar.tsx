@@ -18,7 +18,7 @@ type NavbarProps = React.ComponentProps<'nav'> & {
 const Navbar: React.FC<NavbarProps> = ({ productCategory }) => {
 	return (
 		<nav className='w-full z-50 bg-white sticky top-0 flex justify-between items-center h-[8rem] p-4 md:px-16 lg:max-7xl lg:mx-auto'>
-			<Link href={'/'} className='block'>
+			<Link prefetch={false} href={'/'} className='block'>
 				<Image
 					src='/images/logo-no-bg.png'
 					alt='logo'

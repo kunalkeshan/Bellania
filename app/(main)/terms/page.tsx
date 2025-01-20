@@ -13,6 +13,7 @@ function TermsAndConditionsPage() {
 					These Terms and Conditions (Terms) govern your use of the
 					Bellania application (App), developed by{' '}
 					<Link
+						prefetch={false}
 						href={'#'}
 						target='_blank'
 						className='underline underline-offset-2 hover:underline-offset-1 transition-all'
@@ -21,6 +22,7 @@ function TermsAndConditionsPage() {
 					</Link>{' '}
 					&{' '}
 					<Link
+						prefetch={false}
 						href={'#'}
 						target='_blank'
 						className='underline underline-offset-2 hover:underline-offset-1 transition-all'

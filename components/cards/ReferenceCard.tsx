@@ -10,6 +10,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference }) => {
 	return (
 		<li className='group rounded'>
 			<Link
+				prefetch={false}
 				href={reference?.website ?? '#'}
 				className='w-full max-h-[28rem]'
 			>

@@ -19,7 +19,11 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 		<footer className='w-full h-full bg-app-primary text-white p-4 md:px-16 md:pt-16 lg:'>
 			<div className='lg:flex w-full justify-between'>
 				<div className='mb-8 flex flex-col gap-4'>
-					<Link href={'/'} className='font-semibold text-2xl'>
+					<Link
+						prefetch={false}
+						href={'/'}
+						className='font-semibold text-2xl'
+					>
 						<Image
 							src='/images/logo-light.png'
 							alt='logo'
@@ -34,12 +38,16 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					</div>
 					<div className='flex items-center gap-4'>
 						<Link
+							prefetch={false}
 							target='_blank'
 							href={'https://instagram.com/user'}
 						>
 							<InstagramIcon className='hover:text-app-accent transition-all duration-300' />
 						</Link>
-						<Link href={'mailto:bellania@gmail.com'}>
+						<Link
+							prefetch={false}
+							href={'mailto:bellania@gmail.com'}
+						>
 							<MailIcon className='hover:text-app-accent transition-all duration-300' />
 						</Link>
 					</div>
@@ -55,7 +63,10 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 									variant='link'
 									className='p-0 w-fit text-white'
 								>
-									<Link href={`/products/${category.slug}`}>
+									<Link
+										prefetch={false}
+										href={`/products/${category.slug}`}
+									>
 										{category.title}
 									</Link>
 								</Button>
@@ -85,6 +96,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 										}`}
 									>
 										<Link
+											prefetch={false}
 											href={link.url}
 											target={link.target}
 										>
@@ -101,6 +113,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 				<p className='text-xs py-2 lg:mt-[1px] [&>a]:underline [&>a]:underline-offset-2 hover:[&>a]:underline-offset-1 [&>a]:transition-all'>
 					Copyright &copy; 2023 Bellania | Design & Developed by{' '}
 					<Link
+						prefetch={false}
 						href={'https://kunalkeshan.dev'}
 						target='_blank'
 						title='Never gonna give you up 😜'
@@ -109,6 +122,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					</Link>{' '}
 					&{' '}
 					<Link
+						prefetch={false}
 						href={'https://surendarpd.vercel.app/'}
 						target='_blank'
 						title='Pro Dev'
@@ -117,6 +131,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					</Link>{' '}
 					| Open Source on{' '}
 					<Link
+						prefetch={false}
 						href={'https://github.com/kunalkeshan/Bellania'}
 						target='_blank'
 						title='Access code to this website'
@@ -125,6 +140,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					</Link>{' '}
 					| Powered by{' '}
 					<Link
+						prefetch={false}
 						href={'https://nextjs.org/'}
 						target='_blank'
 						title='Full-Stack Framework to build web apps'
@@ -133,6 +149,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					</Link>{' '}
 					+{' '}
 					<Link
+						prefetch={false}
 						href={'https://tailwindcss.com/'}
 						target='_blank'
 						title='CSS Utility Class Styling'
@@ -141,6 +158,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					</Link>{' '}
 					+
 					<Link
+						prefetch={false}
 						href={'https://ui.shadcn.com/'}
 						target='_blank'
 						title='Component Library'
@@ -149,6 +167,7 @@ const Footer: React.FC<FooterProps> = ({ productCategory }) => {
 					</Link>{' '}
 					+{' '}
 					<Link
+						prefetch={false}
 						href={'https://www.sanity.io/'}
 						target='_blank'
 						title='Content Management System'

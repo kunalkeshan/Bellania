@@ -40,7 +40,7 @@ const NavMenu: React.FC<NavMenuProps> = ({
 				<NavigationMenuItem
 					onClick={handleCloseSheet && handleCloseSheet}
 				>
-					<Link href='/' legacyBehavior passHref>
+					<Link prefetch={false} href='/' legacyBehavior passHref>
 						<NavigationMenuLink
 							className={`${cn(
 								navigationMenuTriggerStyle(),
@@ -103,6 +103,7 @@ const NavMenu: React.FC<NavMenuProps> = ({
 						onClick={handleCloseSheet && handleCloseSheet}
 					>
 						<Link
+							prefetch={false}
 							href={item.url}
 							legacyBehavior
 							passHref

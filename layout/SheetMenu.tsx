@@ -40,7 +40,7 @@ const SheetMenu: React.FC<SheetMenuProps> = ({ productCategory }) => {
 			<SheetContent className='w-full'>
 				<SheetHeader>
 					<SheetTitle className='mx-auto'>
-						<Link href={'/'} className='block'>
+						<Link prefetch={false} href={'/'} className='block'>
 							<Image
 								src='/images/logo.png'
 								alt='logo'
